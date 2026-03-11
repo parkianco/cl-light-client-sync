@@ -1,3 +1,6 @@
+;;;; Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+;;;; SPDX-License-Identifier: BSD-3-Clause
+
 ;;;; CL-LIGHT-CLIENT-SYNC - Standalone Package Definition
 ;;;;
 ;;;; Light client synchronization protocol for Ethereum 2.0 style beacon chains.

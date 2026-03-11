@@ -7,7 +7,7 @@
   :name "CL-LIGHT-CLIENT-SYNC"
   :description "Light client sync protocol for Ethereum 2.0 style beacon chains"
   :version "0.1.0"
-  :author "CLPIC Contributors"
+  :author "Parkian Company LLC"
   :license "BSD-3-Clause"
   :homepage "https://github.com/clpic/cl-light-client-sync"
   :bug-tracker "https://github.com/clpic/cl-light-client-sync/issues"
