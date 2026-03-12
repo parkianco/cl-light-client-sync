@@ -9,9 +9,9 @@
   :version "0.1.0"
   :author "Parkian Company LLC"
   :license "BSD-3-Clause"
-  :homepage "https://github.com/clpic/cl-light-client-sync"
-  :bug-tracker "https://github.com/clpic/cl-light-client-sync/issues"
-  :source-control (:git "https://github.com/clpic/cl-light-client-sync.git")
+  :homepage "https://github.com/parkianco/cl-light-client-sync"
+  :bug-tracker "https://github.com/parkianco/cl-light-client-sync/issues"
+  :source-control (:git "https://github.com/parkianco/cl-light-client-sync.git")
 
   :depends-on ()  ; Pure CL - no external dependencies (inline SHA256)
 
