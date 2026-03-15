@@ -10,7 +10,11 @@
   (:nicknames #:light-client #:lc)
   (:use #:cl)
   (:export
-   #:with-light-client-sync-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-light-client-sync-timing
    #:light-client-sync-batch-process
    #:light-client-sync-health-check;; ========== CONSTANTS ==========
    #:+sync-committee-size+
