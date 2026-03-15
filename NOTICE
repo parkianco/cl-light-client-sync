@@ -8,5 +8,5 @@ Property Chain). It provides SPV-style header synchronization using sync
 committees and aggregate BLS signatures.
 
 Original Authors: CLPIC Contributors
-License: BSD-3-Clause
+License: Apache-2.0
 
