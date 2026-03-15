@@ -10,7 +10,9 @@
   (:nicknames #:light-client #:lc)
   (:use #:cl)
   (:export
-   ;; ========== CONSTANTS ==========
+   #:with-light-client-sync-timing
+   #:light-client-sync-batch-process
+   #:light-client-sync-health-check;; ========== CONSTANTS ==========
    #:+sync-committee-size+
    #:+bls-pubkey-size+
    #:+bls-signature-size+
