@@ -1,29 +1,34 @@
 ;; Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
-;; SPDX-License-Identifier: BSD-3-Clause
-
-;;;; CL-LIGHT-CLIENT-SYNC - ASDF System Definition
-;;;;
-;;;; Light client synchronization protocol for Ethereum 2.0 style beacon chains.
-;;;; Pure Common Lisp implementation with inline SHA256.
+;; SPDX-License-Identifier: Apache-2.0
 
 (asdf:defsystem #:cl-light-client-sync
-  :name "cl-light-client-sync"
   :description "Light client sync protocol for Ethereum 2.0 style beacon chains"
-  :version "0.1.0"
   :author "Park Ian Co"
   :license "Apache-2.0"
-  :homepage "https://github.com/parkianco/cl-light-client-sync"
-  :bug-tracker "https://github.com/parkianco/cl-light-client-sync/issues"
-  :source-control (:git "https://github.com/parkianco/cl-light-client-sync.git")
-
-  :depends-on ()  ; Pure CL - no external dependencies (inline SHA256)
-
+  :version "0.1.0"
   :serial t
-  :components ((:module "src"
-                :components ((:file "package")
-                             (:file "conditions" :depends-on ("package"))
-                             (:file "types" :depends-on ("package"))
-                             (:file "cl-light-client-sync" :depends-on ("package" "conditions" "types")))))))
+  :components
+  ((:module "src"
+            :serial t
+            :components
+            ((:file "package")
+             (:file "conditions")
+             (:file "types")
+             (:file "cl-light-client-sync"))))
+  :in-order-to ((asdf:test-op (test-op #:cl-light-client-sync/test))))
+
+(asdf:defsystem #:cl-light-client-sync/test
+  :description "Tests for cl-light-client-sync"
+  :author "Park Ian Co"
+  :license "Apache-2.0"
+  :depends-on (#:cl-light-client-sync)
+  :serial t
+  :components
+  ((:module "test"
+    :serial t
+    :components
+    ((:file "package")
+     (:file "test"))))
   :perform (asdf:test-op (o c)
              (let ((result (uiop:symbol-call :cl-light-client-sync.test :run-tests)))
                (unless result
