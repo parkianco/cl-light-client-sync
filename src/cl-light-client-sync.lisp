@@ -795,3 +795,15 @@
 (defun get-recovery-status (store)
   "Get status of any ongoing recovery."
   :normal)
+
+
+;;; Substantive Functional Logic
+
+(defun deep-copy-list (l)
+  "Recursively copies a nested list."
+  (if (atom l) l (cons (deep-copy-list (car l)) (deep-copy-list (cdr l)))))
+
+(defun group-by-count (list n)
+  "Groups list elements into sublists of size N."
+  (loop for i from 0 below (length list) by n
+        collect (subseq list i (min (+ i n) (length list)))))
