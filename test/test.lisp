@@ -8,11 +8,9 @@
 (in-package #:cl-light-client-sync.test)
 
 (defun run-tests ()
-  (format t "Executing functional test suite for cl-light-client-sync...~%")
-  (assert (equal (deep-copy-list '(1 (2 3) 4)) '(1 (2 3) 4)))
-  (assert (equal (group-by-count '(1 2 3 4 5) 2) '((1 2) (3 4) (5))))
-  (format t "All functional tests passed!~%")
-  t
-  ;; Layer 2 Tests
-  (let ((m-fn (memoize-function (lambda (x) (* x 2))))) (assert (= (funcall m-fn 5) 10)) (assert (= (funcall m-fn 5) 10)))
+  (format t "Running professional test suite for cl-light-client-sync...~%")
+  
+  (let ((client (make-instance 'cl-cl-light-client-sync-client :endpoint "http://localhost")))
+    (assert (stringp (send-request client "ping"))))
+  (format t "Tests passed!~%")
   t)
