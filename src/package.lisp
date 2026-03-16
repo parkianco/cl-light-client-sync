@@ -10,6 +10,11 @@
   (:nicknames #:light-client #:lc)
   (:use #:cl)
   (:export
+   #:light-client-sync-context
+   #:light-client-sync-execute
+   #:send-request
+   #:initialize-light-client-sync
+   #:cl-light-client-sync-client
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
